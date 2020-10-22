@@ -1,0 +1,64 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: rgba(0, 0, 0, .2);
+    font-size: 16px;
+}
+
+.main-content {
+    margin: 20px 20px auto 20px;
+}
+
+.centered-div {
+    text-align: center;
+}
+
+.header-1 {
+    color: rgba(0, 0, 0, .9);
+    font-size: 3em;
+    font-weight: 900;
+}
+
+.header-2 {
+    color: rgba(0, 0, 0, .8);
+    font-size: 1.5em;
+    font-weight: 750;
+}
+
+.header-3 {
+    color: rgba(0, 0, 0, .7);
+    font-size: 1em;
+    font-weight: 675;
+}
+
+a {
+    color: rgba(0, 0, 0, .7);
+}
+
+a:hover {
+    color: rgba(0, 0, 0, .2);
+    text-decoration: none;
+}
+
+.tile {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .5);
+    border: 4px solid rgba(0, 0, 0, .6);
+    width: 30%;
+    display: inline-block;
+}
+
+.transcript {
+    font-style: italic;
+    color: rgba(0, 0, 0, .8); 
+}
+
+.doc-img {
+    max-height: 500px;
+}
+
+@media screen and (max-width: 600px) {
+    .tile{
+        width: 90%;
+    }
+}

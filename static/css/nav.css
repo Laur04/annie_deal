@@ -1,0 +1,14 @@
+.navlinks {
+    background-color: rgba(0, 0, 0, .1);
+    padding: 10px;
+    font-size: 20px;
+}
+
+.drop-item {
+    color: rgba(0, 0, 0, .9);
+}
+
+.drop-item:hover {
+    color: rgba(0, 0, 0, .5);
+    text-decoration: none;
+}

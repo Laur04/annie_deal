@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block main %}
+    <div class='row'>
+        <div class='centered-div col-lg-7 col-md-8 col-sm-12 col-xs-12'>
+            <img class='doc-img' src='{{ doc.doc_link.url }}'>       
+        </div>
+        <div class='col-lg-5 col-md-4 col-sm-12 col-xs-12'>
+            <p class='header-2'>{{ doc.name }}</p>
+            <p class='header-3'>{{ doc.date }}</p>
+        </div>
+    </div>
+    {% if doc.transcript %}
+        <div class='transcript'>
+            {{ doc.transcript }}
+        </div>
+    {% endif %}
+    {% if doc.comment %}
+        <hr>
+        <div class='comment'>
+            {{ doc.comment }}
+        </div>
+    {% endif %}
+{% endblock %}

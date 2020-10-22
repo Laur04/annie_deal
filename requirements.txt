@@ -1,0 +1,9 @@
+dj-database-url
+django
+django-heroku
+django-storages
+dropbox
+gunicorn
+Pillow
+python-dotenv
+whitenoise
