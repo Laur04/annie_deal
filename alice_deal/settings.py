@@ -108,9 +108,6 @@ USE_TZ = True
 # Heroku settings
 django_heroku.settings(locals())
 
-if not DEBUG:
-    del DATABASES['default']['OPTIONS']['sslmode']
-
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
