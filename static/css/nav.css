@@ -1,14 +1,19 @@
+.nav-bg {
+    background-color: var(--dark) !important;
+}
+
 .navlinks {
-    background-color: var(--primary);
-    padding: 10px;
+    background-color: var(--medium);
     font-size: 20px;
 }
 
 .drop-item {
     color: var(--dark);
+    display: block;
 }
 
 .drop-item:hover {
-    color: var(--light);
+    background-color: var(--light);
     text-decoration: none;
+    color: var(--dark);
 }

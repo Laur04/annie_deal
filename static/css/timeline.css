@@ -12,7 +12,7 @@
     content: '';
     position: absolute;
     width: 6px;
-    background-color: var(--dark);
+    background-color: var(--grey);
     top: 0;
     bottom: 0;
     left: 50%;
@@ -31,8 +31,8 @@
     width: 25px;
     height: 25px;
     right: -12px;
-    background-color: var(--secondary);
-    border: 4px solid var(--primary);
+    background-color: var(--medium);
+    border: 4px solid var(--dark);
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -78,7 +78,7 @@
   
 .content {
     padding: 20px 30px;
-    background-color: var(--primary);
+    background-color: var(--medium);
     position: relative;
     border-radius: 6px;
 }
@@ -96,9 +96,9 @@
   
     .container::before {
         left: 60px;
-        border: medium solid var(--primary);
+        border: medium solid var(--medium);
         border-width: 10px 10px 10px 0;
-        border-color: transparent var(--primary) transparent transparent;
+        border-color: transparent var(--medium) transparent transparent;
     }
   
     .left::after, .right::after {

@@ -1,14 +1,15 @@
 :root {
-    --dark: #1d1e18;
-    --primary: #6b8f71;
-    --secondary: #aad2ba;
-    --light: #d9fff5;
-    --special: #b9f5d8;
+    --dark: #476070;
+    --medium: #77a1bd;
+    --light: #96ccf0;
+    --grey: #686d70;
+    --background: #e1ebf2;
 }
 
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
+    background-color: var(--background);
 }
 
 .main-content {
@@ -25,20 +26,27 @@ body {
     font-weight: 900;
 }
 
+.header-1-5 {
+    color: var(--grey);
+    font-size: 2em;
+    font-weight: 900;
+}
+
 .header-2 {
-    color: var(--dark);
+    color: var(--grey);
     font-size: 1.5em;
     font-weight: 750;
 }
 
 .header-3 {
-    color: var(--dark);
+    color: var(--grey);
     font-size: 1em;
     font-weight: 675;
 }
 
 a {
-    color: var(--secondary);
+    color: var(--grey);
+    font-size: 20px;
 }
 
 a:hover {
@@ -49,20 +57,18 @@ a:hover {
 .tile {
     margin: 10px;
     padding: 10px;
-    background-color: var(--primary);
-    border: 4px solid var(--secondary);
+    background-color: var(--medium);
+    border: 4px solid var(--dark);
     width: 30%;
     display: inline-block;
 }
 
 .transcript {
     font-style: italic;
-    color: var(--dark);
 }
 
 .doc-img {
     max-height: 500px;
-    color: var(--dark);
 }
 
 @media screen and (max-width: 600px) {
