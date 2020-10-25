@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from django.core.files import File
+from os.path import basename
+import requests
+from tempfile import TemporaryFile
+from urllib.parse import urlsplit
 
 from .models import Document
 

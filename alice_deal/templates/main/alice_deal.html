@@ -16,9 +16,6 @@
     <hr>
     {% for doc in docs %}
         <div class='tile'>
-            <div class='centered-div'>
-                <img src="{{ doc.doc_link.url }}" width='50%'>
-            </div>
             <p class='header-1-5'>{{ doc.name }}</p>
             <p class='header-2'>{{ doc.date }}</p>
             <p><a href="{% url 'main:document' doc.id %}">Learn More</a></p>

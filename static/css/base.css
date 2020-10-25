@@ -68,8 +68,8 @@ a:hover {
 }
 
 .doc-img {
-    max-height: 500px;
-}
+    border: 1px solid black;
+    direction: ltr;
 
 @media screen and (max-width: 600px) {
     .tile{
