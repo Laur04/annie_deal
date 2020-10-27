@@ -31,7 +31,7 @@ def document(request, doc_id):
     return render(request, 'main/document.html', context={'doc': doc})
 
 def get_img(doc):
-    if doc.doc_is_pdf is None:
+    if doc.doc_is_pdf:
         try:
             with NamedTemporaryFile() as tf:
                 r = requests.get(doc.doc_link.url, stream=True)
