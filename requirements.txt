@@ -6,6 +6,7 @@ dropbox
 gunicorn
 pdf2image
 Pillow
+poppler
 poppler-utils
 python-dotenv
 whitenoise
