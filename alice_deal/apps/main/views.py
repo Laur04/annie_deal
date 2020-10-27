@@ -31,45 +31,26 @@ def document(request, doc_id):
     return render(request, 'main/document.html', context={'doc': doc})
 
 def get_img(doc):
-    with NamedTemporaryFile() as tf:
-        r = requests.get(doc.doc_link.url, stream=True)
-        for chunk in r.iter_content(chunk_size=4096):
-            tf.write(chunk)
-        tf.seek(0)
-        new_image = convert_from_path(tf.name)[0]
+    if doc.doc_is_pdf is None:
+        try:
+            with NamedTemporaryFile() as tf:
+                r = requests.get(doc.doc_link.url, stream=True)
+                for chunk in r.iter_content(chunk_size=4096):
+                    tf.write(chunk)
+                tf.seek(0)
+                new_image = convert_from_path(tf.name)[0]
 
-        new_image_io = BytesIO()
-        new_image.save(new_image_io, format='PNG')
+                new_image_io = BytesIO()
+                new_image.save(new_image_io, format='PNG')
 
-        doc.doc_pic.save(
-            str(doc.id) + '.png',
-            content=ContentFile(new_image_io.getvalue()),
-            save=False
-        )
-        doc.doc_is_pdf = True
-        doc.save()
-
-# def get_img(doc):
-#     if doc.doc_is_pdf is None:
-#         try:
-#             with NamedTemporaryFile() as tf:
-#                 r = requests.get(doc.doc_link.url, stream=True)
-#                 for chunk in r.iter_content(chunk_size=4096):
-#                     tf.write(chunk)
-#                 tf.seek(0)
-#                 new_image = convert_from_path(tf.name)[0]
-
-#                 new_image_io = BytesIO()
-#                 new_image.save(new_image_io, format='PNG')
-
-#                 doc.doc_pic.save(
-#                     str(doc.id) + '.png',
-#                     content=ContentFile(new_image_io.getvalue()),
-#                     save=False
-#                 )
-#                 doc.doc_is_pdf = True
-#                 doc.save()
-#         except:
-#             doc.doc_is_pdf = False
-#             doc.save()
-#     return doc.doc_is_pdf
+                doc.doc_pic.save(
+                    str(doc.id) + '.png',
+                    content=ContentFile(new_image_io.getvalue()),
+                    save=False
+                )
+                doc.doc_is_pdf = True
+                doc.save()
+        except:
+            doc.doc_is_pdf = False
+            doc.save()
+    return doc.doc_is_pdf
