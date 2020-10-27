@@ -13,8 +13,8 @@ class Document(models.Model):
     transcript = models.TextField(max_length=10000, blank=True, null=True)
     comment = models.TextField(max_length=10000, blank=True, null=True)
 
-    doc_pic = models.FileField(blank=True, null=True, editable=False)
-    doc_is_pdf = models.BooleanField(blank=True, null=True, editable=False)
+    doc_pic = models.FileField(blank=True, null=True)
+    doc_is_pdf = models.BooleanField(blank=True, null=True)
 
     def __str__(self):
         return self.name
