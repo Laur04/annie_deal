@@ -14,11 +14,20 @@
         hendrerit urna a, mattis felis. Donec sodales laoreet dolor, a mollis velit finibus quis. 
     </p>
     <hr>
-    {% for doc in docs %}
-        <div class='tile'>
-            <p class='header-1-5'>{{ doc.name }}</p>
-            <p class='header-2'>{{ doc.date }}</p>
-            <p><a href="{% url 'main:document' doc.id %}">Learn More</a></p>
-        </div>
-    {% endfor %}
+    <div class='tile-container'>
+        {% for doc in docs %}
+            <div class='tile'>
+                <div class='centered-div'>
+                    {% if doc.1 %}
+                        <img class='tile_img' src='{{ doc.0.doc_pic.url }}'>
+                    {% else %}
+                        <img class='tile_img' src='{{ doc.0.doc_link.url }}'>
+                    {% endif %}
+                </div>
+                <p class='header-1-5'>{{ doc.0.name }}</p>
+                <p class='header-2'>{{ doc.0.date }}</p>
+                <p><a href="{% url 'main:document' doc.0.id %}">Learn More</a></p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

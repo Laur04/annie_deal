@@ -61,6 +61,16 @@ a:hover {
     border: 4px solid var(--dark);
     width: 30%;
     display: inline-block;
+    vertical-align: middle;
+}
+
+.tile_img {
+    max-height: 400px;
+    max-width: 90%;
+}
+
+.tile-container {
+    vertical-align: middle;
 }
 
 .transcript {

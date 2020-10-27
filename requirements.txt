@@ -4,6 +4,7 @@ django-heroku
 django-storages
 dropbox
 gunicorn
+pdf2image
 Pillow
 python-dotenv
 whitenoise
