@@ -1,7 +1,7 @@
 from django.db import models
 
 class Document(models.Model):
-    PAGES = (('background', 'Background'), ('alice_deal', 'Alice Deal'), ('school', 'School'))
+    PAGES = (('background', 'Historical Context'), ('miss_alice_deal', 'Miss Alice Deal'), ('alice_deal', 'In Memoriam'), ('school', 'Alice Deal Junior High'))
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200, blank=False, null=False)

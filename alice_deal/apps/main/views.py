@@ -14,17 +14,27 @@ from .models import Document
 def index(request):
     return render(request, 'main/index.html')
 
+def intro(request):
+    return render(request, 'main/intro.html')
+
 def background(request):
     docs = [[d, get_img(d)] for d in Document.get_documents_for('background')]
     return render(request, 'main/background.html', context={'docs': docs})
 
 def alice_deal(request):
-    docs = [[d, get_img(d)] for d in Document.get_documents_for('alice_deal')]
+    docs = [[d, get_img(d)] for d in Document.get_documents_for('miss_alice_deal')]
     return render(request, 'main/alice_deal.html', context={'docs': docs})
+
+def memoriam(request):
+    docs = [[d, get_img(d)] for d in Document.get_documents_for('alice_deal')]
+    return render(request, 'main/memoriam.html', context={'docs': docs})
 
 def school(request):
     docs = [[d, get_img(d)] for d in Document.get_documents_for('school')]
     return render(request, 'main/school.html', context={'docs': docs})
+
+def research(request):
+    return render(request, 'main/research.html')
 
 def document(request, doc_id):
     doc = Document.objects.get(id=doc_id)

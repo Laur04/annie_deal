@@ -94,7 +94,7 @@ pre {
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
- }
+}
 
 @media screen and (max-width: 600px) {
     .tile{
