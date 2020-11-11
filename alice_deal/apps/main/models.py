@@ -21,4 +21,4 @@ class Document(models.Model):
 
     @staticmethod
     def get_documents_for(page):
-        return Document.objects.filter(page=page)
+        return Document.objects.filter(page=page).order_by('date')

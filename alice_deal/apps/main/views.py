@@ -15,15 +15,15 @@ def index(request):
     return render(request, 'main/index.html')
 
 def background(request):
-    docs = [[d, get_img(d)] for d in Document.get_documents_for('background').order_by('date')]
+    docs = [[d, get_img(d)] for d in Document.get_documents_for('background')]
     return render(request, 'main/background.html', context={'docs': docs})
 
 def alice_deal(request):
-    docs = [[d, get_img(d)] for d in Document.get_documents_for('alice_deal').order_by('date')]
+    docs = [[d, get_img(d)] for d in Document.get_documents_for('alice_deal')]
     return render(request, 'main/alice_deal.html', context={'docs': docs})
 
 def school(request):
-    docs = [[d, get_img(d)] for d in Document.get_documents_for('school').order_by('date')]
+    docs = [[d, get_img(d)] for d in Document.get_documents_for('school')]
     return render(request, 'main/school.html', context={'docs': docs})
 
 def document(request, doc_id):
