@@ -25,7 +25,7 @@
                     {% endif %}
                 </div>
                 <p class='header-1-5'>{{ doc.0.name }}</p>
-                <p class='header-2'>{{ doc.0.date }}</p>
+                <p class='header-2'>{% if doc.0.date %}{{ doc.0.date }}{% else %}n.d.{% endif %}</p>
                 <p><a href="{% url 'main:document' doc.0.id %}">Learn More</a></p>
             </div>
         {% endfor %}

@@ -75,6 +75,7 @@ a:hover {
 
 .transcript {
     font-style: italic;
+    white-space: wrap;
 }
 
 .doc-img {
