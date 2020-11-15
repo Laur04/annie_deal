@@ -16,7 +16,7 @@ from tempfile import NamedTemporaryFile
 
 from .models import Document
 
-for doc in Document.objects.filter(is_pdf=False):
+for doc in Document.objects.filter(doc_is_pdf=False):
     with NamedTemporaryFile() as tf:
         r = requests.get(doc.doc_link.url, stream=True)
         for chunk in r.iter_content(chunk_size=4096):
