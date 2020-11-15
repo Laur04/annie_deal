@@ -15,7 +15,7 @@ if os.path.isfile(dotenv_file):
 
 # Production settings
 SECRET_KEY = os.environ['SECRET_KEY']
-DEBUG = False
+DEBUG = bool(int(os.environ['DEBUG']))
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'alice-deal.herokuapp.com']
 
 
