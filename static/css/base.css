@@ -96,6 +96,10 @@ pre {
     word-wrap: break-word;
 }
 
+em {
+    background-color: rgb(247, 247, 125);
+}
+
 @media screen and (max-width: 600px) {
     .tile{
         width: 90%;
