@@ -9,19 +9,19 @@ def intro(request):
     return render(request, 'main/intro.html')
 
 def background(request):
-    docs = [[d, d.doc_is_pdf] for d in Document.objects.filter(page='background').order_by('date')]
+    docs = Document.objects.filter(page='background').order_by('date')
     return render(request, 'main/background.html', context={'docs': docs})
 
 def alice_deal(request):
-    docs = [[d, d.doc_is_pdf] for d in Document.objects.filter(page='miss_alice_deal').order_by('date')]
+    docs = Document.objects.filter(page='miss_alice_deal').order_by('date')
     return render(request, 'main/alice_deal.html', context={'docs': docs})
 
 def memoriam(request):
-    docs = [[d, d.doc_is_pdf] for d in Document.objects.filter(page='alice_deal').order_by('date')]
+    docs = Document.objects.filter(page='alice_deal').order_by('date')
     return render(request, 'main/memoriam.html', context={'docs': docs})
 
 def school(request):
-    docs = [[d, d.doc_is_pdf] for d in Document.objects.filter(page='school').order_by('date')]
+    docs = Document.objects.filter(page='school').order_by('date')
     return render(request, 'main/school.html', context={'docs': docs})
 
 def research(request):
