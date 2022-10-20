@@ -97,4 +97,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "media-root")
 
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 
-DROPBOX_OAUTH2_TOKEN = os.environ['DROPBOX_OAUTH_TOKEN']
+# Import secret.py
+from .secret import *
