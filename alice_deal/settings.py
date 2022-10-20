@@ -1,22 +1,8 @@
 import os
-import dj_database_url
-import django_heroku
-import dotenv
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-# Import .env file
-dotenv_file = os.path.join(BASE_DIR, '.env')
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
-
-
-# Production settings
-SECRET_KEY = os.environ['SECRET_KEY']
-DEBUG = bool(int(os.environ['DEBUG']))
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'alice-deal.herokuapp.com']
 
 
 # Application definition
@@ -63,19 +49,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'alice_deal.wsgi.application'
 
 
-# Database
-DATABASES = {}
-if DEBUG: 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-
-
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,10 +76,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# Heroku settings
-django_heroku.settings(locals())
 
 
 # Static files (CSS, JavaScript, Images)
